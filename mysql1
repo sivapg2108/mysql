@@ -1,0 +1,17 @@
+CREATE TABLE users(
+id INT(10) NOT NULL AUTO_INCREMENT,
+email VARCHAR(20) NOT NULL,
+password VARCHAR(20) NOT NULL,
+PRIMARY KEY(id)
+);
+
+ 2. Table for post online complaints.
+
+CREATE TABLE online_complaints(
+    id INT AUTO_INCREMENT,
+    user_id VARCHAR(20) NOT NULL,
+    complaint_details VARCHAR(300) NOT NULL,
+    date DATE NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);
